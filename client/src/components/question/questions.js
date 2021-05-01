@@ -5,10 +5,11 @@ import QuestionCatalogBTN from './question_catalog';
 import { connect } from 'react-redux';
 import QuestionOptions from './question_options';
 import { getDate } from '../../methods/date';
+import parse from 'html-react-parser';
 
 const Questions = (props) => {
     const {data, userInfo, filterQuestions} = props;
-    const {answers, votes, question_views, question, tags, username, question_id, date} = data;
+    const {answers, votes, question_views, question, tags, username, question_id, date, context} = data;
     
 
     
@@ -39,7 +40,12 @@ const Questions = (props) => {
 
                 </div>
                 <Link to={`/${question.replace(/[\s]+/g, '-')}`}><h1>{question}</h1></Link>
-                <p className='popular_answer'>erunt et et laboris ex ullamco veniam deserunt ad magna est.</p>
+                <div className='question_context'>
+                    {parse(context)}
+                    <div className='fade'></div>
+                </div>
+                
+                
                 <div className='question_info2'>
                     <ul className='question_tags'>
                         {tags.map(tag => (
