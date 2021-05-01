@@ -1,0 +1,143 @@
+@import 'variables';
+
+.ask_form_container, .answer_form_container{
+    position: fixed !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    display: none;
+    z-index: 100;
+    list-style-type: circle !important;
+    .ask_form, .answer_form{
+        .ck-content{
+            color: $dark;
+            font-weight: 600;
+            h1, h2, h3, h4, h5{
+                font-family: $oswald;
+                color: $navy_blue;
+            }
+            p{
+                font-family: $roboto;
+            }
+            height: 200px !important;
+            ul{
+                list-style-type: circle !important;
+            }
+            ol{
+                list-style-type: decimal !important;
+            }
+            font-family: $roboto !important;
+        }
+        overflow: auto;
+        box-shadow: 2px 4px 50px black;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        width: 40%;
+        min-width: 300px;
+        min-height: 400px;
+        max-height: 600px;
+        position: relative;
+        .ask_question_header, .answer_header{
+            display: flex;
+            padding: 5px 0;
+            justify-content: space-between;
+            border-bottom: 1px solid $navy_blue;
+            input{
+                background: transparent;
+                border: none;
+                outline: none;
+                font-family: $roboto;
+                font-size: 1.2em;
+                font-weight: bolder;
+                color: $navy_blue;
+            }
+
+            i{
+                font-size: 2em;
+                color: red;
+            }
+            
+        }
+        h1, h3{
+            font-family: $oswald;
+            color: $navy_blue;
+        }
+        textarea{
+            border: none;
+            outline: none;
+            resize: none;
+            font-family: $roboto;
+            color: $dark;
+            padding: 20px 10px;
+            font-size: 1em;
+        }
+        .question_context{
+            overflow: auto;
+            max-height: 300px;
+            
+            
+        }
+        .question_textarea{
+            width: 100%;
+            height: 100px;
+            
+        }
+        .context_textarea{
+            width: 100%;
+            height: 70px;
+        }
+        .list_container{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 10px;
+            overflow: auto;
+            li{
+                border: 1px solid $navy_blue;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                color: $dark;
+                margin-right: 5px;
+                i{
+                    margin-right: 5px;
+                    color: red;
+
+                    
+                }
+                margin-bottom: 5px;
+
+            }
+            .add_tags{
+                display: flex;
+                border: 1px solid $navy_blue;
+                align-items: center;
+                padding:5px ;
+                .tag{
+                    outline: none;
+                    min-width: 40px;
+                    width: 40px;
+                    margin-right: 5px;
+                    border: none;
+
+                }
+                i{
+                    color: $navy_blue;
+                    margin-right: 5px;
+                    
+                    
+                }
+            }
+    
+        }
+    }
+}
+.unhide_ask_form, .unhide_answer_form{
+    display: block;
+}

@@ -1,0 +1,195 @@
+@import 'variables';
+.home{
+    
+    .tags_container_fixed{
+        display: none;
+        z-index: 0;
+    }
+    .previous_footer_container_fixed{
+        display: none;
+        z-index: 0;
+        
+        
+    }
+    .question:last-child{
+        margin-bottom: 200px;
+    }
+    .questions_container{
+        
+        width: 90%;
+        
+        padding: 5px;
+        
+        margin: auto;
+        margin-top: 50px;
+        div{
+            background-color: white;
+            margin: 10px auto;
+        }
+        // width: 90%;
+        
+        .user_profile{
+            width: 95%;
+            padding: 30px;
+            .user_image{
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                margin: 0;
+                background-color: brown;
+                margin-right: 10px;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .user_info{
+                display: flex;
+                width: 100%;
+                // justify-content: flex-start;
+                margin: 0 !important;
+
+            }
+            .user_name{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h1, h3{
+                    font-family: $oswald;
+                    color: $navy_blue;
+
+                }
+            }
+            button{
+                margin-left: auto;
+                outline: none;
+                border: none;
+                background-color: $navy_blue;
+                color: white;
+                padding: 20px;
+                border-radius: 25px;
+                height: 50px;
+            }
+        }
+
+        .filter_options{
+            width: 95%;
+            margin: auto;
+            padding: 0;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: white;
+            li{
+                font-family: $roboto;
+                font-weight: bolder;
+                font-size: 1.3em;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $dark;
+                cursor: pointer;
+
+            }
+            .view{
+                border-bottom: 2px solid $navy_blue;
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (min-width : 1000px){
+    .home{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        .tags_container{
+            width: 150px;
+            padding: 5px;
+            .tags_container_fixed{
+                width: 150px;
+                display: block;
+                margin: 10px auto;
+                position: fixed;
+                .tags{
+                    overflow: auto;
+                }
+                
+            }
+        }
+        .questions_container{
+            width: 650px;
+            height: 100%;
+            margin-top: 0;
+            .filter_options{
+                margin-top: 10px;
+            }
+            .user_profile{
+                margin-top: 10px;
+            }
+            
+            
+
+        }
+        .previous_footer_container{
+            width: 300px;
+            padding: 5px;
+            .previous_footer_container_fixed{
+                position: fixed;
+                display: block;
+                // top: 40px;
+                width: 300px;
+                .previous_container{
+                    width: 100%;
+                    height: 300px;
+                    background-color: white;
+                    margin: 10px auto;
+                    padding: 10px;
+                    overflow: auto;
+                    h1{
+                        font-family: $oswald;
+                        color: $navy_blue;
+                        width: 100%;
+                        border-bottom: 1px solid $taupe;
+                        padding-bottom: 10px;
+                    }
+                    .previously_viewed_question{
+                        border-top: 1px solid $blush;
+                        
+                        h2{
+                            font-family: $oswald;
+                            color: $dark;
+                            &:hover{
+                                color: $navy_blue;
+                            }
+                        }
+                        p{
+                            font-family: $roboto;
+                            font-size: 0.8em;
+                            span{
+                                color: $navy_blue;
+                            }
+                        }
+                    }
+                    
+    
+                }
+                footer{
+                    width: 100%;
+                    background-color: white;
+                    height: 200px;
+                    margin: 10px auto;
+                }    
+            } 
+        }
+    }
+
+}

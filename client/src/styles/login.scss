@@ -1,0 +1,122 @@
+@import 'variables';
+
+.login_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 200px;
+    background-color: white;
+    width: 320px;
+    background-color: white;
+    transition: .5s;
+    padding: 20px;
+    border-radius: 10px;
+
+    .already_have{
+        margin-top: 200px;
+        font-weight: normal;
+        color: $dark;
+        font-size: 0.8em;
+        margin-top: 20px;
+        // color: blue;
+    }
+    .signup_warning{
+        font-weight: normal;
+        color: $dark;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
+    h1{
+        font-family: $oswald;
+        text-align: center;
+        color: $navy_blue;
+    }
+    p{
+        font-family: $roboto;
+        color: $dark;
+        text-align: center;
+        font-weight: bold;
+        color: $taupe;
+        font-size: 1em;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        label{
+            position: relative;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid $taupe;
+            margin: 5px 0 ;
+            border-radius: 10px;
+            p{
+                position: absolute;
+                top: 0;
+                font-size: 0.7em;
+                transition: .5s;
+                font-weight: normal;
+                color: rgb(77, 77, 77);
+                
+            }
+            input{
+                border: none;
+                outline: none;
+                font-size: 1em;
+            }
+            input:placeholder-shown + p{
+                font-size: 1em;
+                font-family: $roboto;
+
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+        }
+        input[type=submit]{
+            // color: white;
+            background: linear-gradient(10deg, $mustard, rgb(243, 243, 139));
+            outline: none;
+            border: none;
+            padding: 10px;
+            align-items: center;
+            border-radius: 10px;
+            margin: 5px 0;
+            font-weight: 400;
+
+        }
+    }
+    .facebook, .google{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding: 10px;
+        align-items: center;
+        border-radius: 10px;
+        margin: 5px 0;
+        font-family: $roboto;
+        border: none;
+        width: 100%;
+        font-size: 1em;
+        font-family: $roboto;
+        outline: none;
+        
+        i{
+            margin-right: 5px;
+        }
+        p{
+            font-family: $roboto;
+            font-weight: 400;
+            color: white;
+        }
+    }
+    .facebook{
+        background-color: #3b5998;
+    }
+    .google{
+        background-color: #db3236;
+    }
+
+}

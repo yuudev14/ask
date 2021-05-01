@@ -1,0 +1,281 @@
+@import 'variables';
+.sign_up_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 200px;
+    overflow: hidden;
+    
+    width: 800px;
+    display: flex;
+    .why_sign_up{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-family: $oswald;
+            color: $navy_blue;
+        }
+        ul{
+            margin-left: 1em;
+            li{
+                color: $dark;
+                display: flex;
+                margin: 5px 0;
+                align-items: center;
+                i{
+                    margin: 0 5px;
+                    color: $taupe;
+                }
+                p{
+                    font-family: $roboto;
+                }
+            }
+        }
+    }
+    .show_sign_up_step{
+        width: 40% !important;
+        padding: 20px !important;
+        display: block !important;
+        // h1, p{
+        //     display: block !important;
+        // }
+        // form,  div{
+        //     display: flex;
+        // }
+        
+    }
+    .sign_up_form{
+        background-color: white;
+        transition: .5s;
+        padding: 0;
+        overflow: hidden;
+        // display: none;
+        width: 0;
+        border-radius: 10px;
+        height: 430px;
+        // h1, p, form, div{
+        //     display: none;
+        // }
+        .already_have{
+            margin-top: 200px;
+            font-weight: normal;
+            color: $dark;
+            font-size: 0.8em;
+            margin-top: 20px;
+            // color: blue;
+        }
+        .signup_warning{
+            font-weight: normal;
+            color: $dark;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        h1{
+            font-family: $oswald;
+            text-align: center;
+            color: $navy_blue;
+        }
+        p{
+            font-family: $roboto;
+            color: $dark;
+            text-align: center;
+            font-weight: bold;
+            color: $taupe;
+            font-size: 1em;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label{
+                position: relative;
+                width: 100%;
+                padding: 5px;
+                border: 1px solid $taupe;
+                margin: 5px 0 ;
+                border-radius: 10px;
+                p{
+                    position: absolute;
+                    top: 0;
+                    font-size: 0.7em;
+                    transition: .5s;
+                    font-weight: normal;
+                    color: rgb(77, 77, 77);
+                    
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    font-size: 1em;
+                }
+                input:placeholder-shown + p{
+                    font-size: 1em;
+                    font-family: $roboto;
+
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+            }
+            input[type=submit]{
+                // color: white;
+                background: linear-gradient(10deg, $mustard, rgb(243, 243, 139));
+                outline: none;
+                border: none;
+                padding: 10px;
+                align-items: center;
+                border-radius: 10px;
+                margin: 5px 0;
+                font-weight: 400;
+
+            }
+        }
+        .facebook, .google{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+            align-items: center;
+            border-radius: 10px;
+            margin: 5px 0;
+            font-family: $roboto;
+            border: none;
+            width: 100%;
+            font-size: 1em;
+            font-family: $roboto;
+            outline: none;
+            
+            i{
+                margin-right: 5px;
+            }
+            p{
+                font-family: $roboto;
+                font-weight: 400;
+                color: white;
+            }
+        }
+        .facebook{
+            background-color: #3b5998;
+        }
+        .google{
+            background-color: #db3236;
+        }
+    }
+    
+    .sign_up_next{
+        transition: .5s;
+        background-color: white;
+        width: 0;
+        max-height: 430px;
+        h1{
+            font-family: $oswald;
+            text-align: center;
+            color: $navy_blue;
+        }
+        p{
+            font-family: $roboto;
+            color: $dark;
+            text-align: center;
+            font-weight: bold;
+            color: $taupe;
+            font-size: 1em;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label{
+                position: relative;
+                width: 100%;
+                padding: 5px;
+                border: 1px solid $taupe;
+                margin: 5px 0 ;
+                border-radius: 10px;
+                p{
+                    position: absolute;
+                    top: 0;
+                    font-size: 0.7em;
+                    transition: .5s;
+                    font-weight: normal;
+                    color: rgb(77, 77, 77);
+                    
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    font-size: 1em;
+                }
+                input:placeholder-shown + p{
+                    font-size: 1em;
+                    font-family: $roboto;
+
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+            }
+            input[type=submit]{
+                // color: white;
+                background: linear-gradient(10deg, $mustard, rgb(243, 243, 139));
+                outline: none;
+                border: none;
+                padding: 10px;
+                align-items: center;
+                border-radius: 10px;
+                margin: 5px 0;
+                font-weight: 400;
+
+            }
+        }
+        .back_step{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+            background-color: $navy_blue;
+            align-items: center;
+            border-radius: 10px;
+            margin: 5px 0;
+            font-family: $roboto;
+            
+            i{
+                margin-right: 5px;
+            }
+            p{
+                font-family: $roboto;
+                font-weight: 400;
+                color: white;
+            }
+
+
+        }
+    }
+
+}
+@media only screen and (max-width : 500px){
+    .sign_up_container{
+        max-width: 400px;
+        width: 90%;
+        min-width: 300px;
+        .why_sign_up{
+            display: none !important;
+        }
+        .sign_up_next{
+            // width: 0 i !important;
+            overflow: hidden;
+        }
+        .sign_up_form{
+            // width: 100% !important;
+        }
+        .show_sign_up_step{
+            width: 100% !important;
+        }
+    }
+    
+}
