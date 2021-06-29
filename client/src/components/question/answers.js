@@ -131,12 +131,8 @@ const Answer = (props) => {
                     {comments.map(comment => (
                                 <Comment data={comment}/>
                             ))}
-                    {no_comment === 0 ? (
+                    {comments.length === 0 && (
                         <p>no comments</p>
-                    ) : (
-                        <>
-                            <p className='comment_btn'>View 3 more comments</p>
-                        </>
                     )} 
                     </div>
                 </div>

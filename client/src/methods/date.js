@@ -30,7 +30,8 @@ export const getDate = (date) => {
                     }
 
                 }else{
-                    return `${currentDate.getHours() - dateObj.hour}`
+                    // return `${currentDate.getHours() - dateObj.hour}`
+                    return `${currentDate.getMinutes() - dateObj.minutes} minutes ago`
 
                 }
 

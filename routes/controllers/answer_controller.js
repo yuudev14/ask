@@ -49,10 +49,11 @@ const add_comment = async(req, res) => {
     try {
         const {comment} = req.body;
         const id = req.params.id;
+        const username = await db.query(`SELECT username FROM accounts WHERE user_id = $1`, [req.user])
         const addCommentMethod = await db.query(`INSERT INTO answer_comments (account_id, answer_id, comment) 
                                                 VALUES ($1, $2, $3) RETURNING *`, [req.user, id, comment]);
         const addedCommentData = addCommentMethod.rows[0];
-        res.send(addedCommentData);
+        res.send({...addedCommentData, username : username.rows[0].username});
         
     } catch (error) {
         console.log(error);
@@ -74,11 +75,11 @@ const deleteAnswer = async(req, res) => {
 const view_comments = async(req, res) => {
     try {
         const id = req.params.id;
-        const comments = await db.query(`SELECT answer_comments.*, accounts.username FROM answer_comments 
+        const comments = await db.query(`SELECT answer_comments.*, accounts.username, answer_comments.date FROM answer_comments 
                                          LEFT JOIN accounts
                                         ON accounts.user_id = answer_comments.account_id
                                         where answer_id = $1 
-                                        ORDER BY date`, [id]);
+                                        ORDER BY answer_comments.date`, [id]);
         res.send(comments.rows);
         
     } catch (error) {
