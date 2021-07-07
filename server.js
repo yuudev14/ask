@@ -1,18 +1,24 @@
 const express =  require('express');
 const socket = require('socket.io');
+const cors = require('cors');
+const path = require("path");
 
 const app = express();
 
 const port = process.env.PORT || 8000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "client/build")));
+  }
 
 app.use('/authentication', require('./routes/authentication'));
 app.use('/dashboard', require('./routes/dashboard'));
 app.use('/question', require('./routes/question'));
 app.use('/answer', require('./routes/answer'));
-
 
 
 const server = app.listen(port, () => {
