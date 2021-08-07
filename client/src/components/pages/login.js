@@ -22,8 +22,7 @@ const Login = (props) => {
             localStorage.setItem('ask_token', JSON.stringify(signin_method.data.token))
             props.history.push('/');
         } catch (error) {
-            console.log(error.response.data);
-            setError(error.response.data)
+            setError(error.response.data.error);
             
         }
         
