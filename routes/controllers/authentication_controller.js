@@ -38,7 +38,7 @@ const login_method = (req, res, password, account) => {
             await db.query("INSERT INTO tokens (token) VALUES ($1)", [token]);
             res.send({token});
         }else{
-            res.status(401).send({error : 'password is incorrect'});
+            res.status(401).send('password is incorrect');
         }
     })
 }
