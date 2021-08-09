@@ -16,7 +16,6 @@ const QuestionDetails = (props) => {
     setError} = props;
     const [currentQuestion, setCurrentQuestion] = useState('');
     const location = useLocation();
-    console.log(location);
     const setupQuestionDetails = () => {
         const question_title = props.match.params.question
         getDetails(question_title);
@@ -44,7 +43,6 @@ const QuestionDetails = (props) => {
                     const indexToBeRemove = previousViewedQuestion.indexOf(props.match.params.question);
                     let NewPreviousViewedQuestion = [...previousViewedQuestion];
                     NewPreviousViewedQuestion.splice(indexToBeRemove, 1);
-                    console.log(NewPreviousViewedQuestion)
                     localStorage.setItem('ask_previously_viewed', JSON.stringify([ props.match.params.question, ...NewPreviousViewedQuestion ]));
                 }else{
                     if(previousViewedQuestion.length > 3){

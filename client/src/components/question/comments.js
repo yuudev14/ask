@@ -6,7 +6,8 @@ import { deleteAnswersCommentAction } from '../../store/actions/answerActions';
 const Comment = (props) => {
     const {
         data,
-        deleteCommentDispatch
+        deleteCommentDispatch,
+        userInfo
     } = props;
     const {
         comment,
@@ -19,7 +20,11 @@ const Comment = (props) => {
         <div className='comment'>
             <div>
                 <Link to={`/U/${username}`}><p className='commenter'> - {username}</p></Link>
-                <div><i onClick={() => deleteCommentDispatch(comment_id)}>. . .</i></div>
+                {userInfo.username === username && (
+                    <div><i onClick={() => deleteCommentDispatch(comment_id)}>. . .</i></div>
+
+                )}
+                
             </div>
             <p className='date'>{getDate(date)}</p>
             <p>{comment}</p>
@@ -28,10 +33,15 @@ const Comment = (props) => {
      );
 }
 
+const mapStateToProps = state => {
+    return {
+        userInfo : state.user
+    }
+}
 const mapDispatchToProps = dispatch => {
     return {
         deleteCommentDispatch : (comment_id) => dispatch(deleteAnswersCommentAction(comment_id)),
     }
 }
  
-export default connect(null, mapDispatchToProps)(Comment);
+export default connect(mapStateToProps, mapDispatchToProps)(Comment);

@@ -134,7 +134,6 @@ const UserDashboard = (props) => {
         }
         return `${month[date.getMonth()]} ${date.getDate()}`
     }
-    console.log(date())
     return ( 
         <Fragment>
             {props.match.params.username === userInfo.username && (

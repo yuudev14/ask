@@ -62,7 +62,6 @@ export const deleteAnswersCommentAction = (id) => {
     return async(dispatch) => {
         try {
             const deleteCommentMethod = await axios.delete(`/answer/delete-comment/${id}`, {headers : {token : JSON.parse(localStorage.getItem('ask_token'))}});
-            console.log(deleteCommentMethod)
                 dispatch({
                     type: 'DELETE_ANSWERS_COMMENT',
                     id,

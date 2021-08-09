@@ -21,7 +21,6 @@ const OAuthBntn = (props) => {
         }
     }
     const responseFacebook = async(response) => {
-        console.log('asfdagdffsdf')
         if(response.status !== 'unknown'){
             const name = response.name.split(' ');
             const data = {

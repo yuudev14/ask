@@ -33,7 +33,6 @@ const AskQuestion = (props) => {
     }
 
     const submitQuestion = async(question_form, path, filter) => {
-        console.log(filter);
         try {
             const submitQuestionMethod = await axios.post('/question/submit-question', question_form, {headers : {token : JSON.parse(localStorage.getItem('ask_token'))}});
             

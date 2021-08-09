@@ -144,7 +144,6 @@ const Answer = (props) => {
 }
 const mapStateToProps = (state, prevState) => {
     const comments = state.questionDetails.answerLists.filter(answer => answer.answer_id === prevState.answer.answer_id)[0].comments;
-    console.log(comments);
     return{
         comment : comments,
         userInfo : state.user
