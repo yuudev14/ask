@@ -72,6 +72,18 @@ const deleteAnswer = async(req, res) => {
     }
 }
 
+const deleteComments = async(req, res) => {
+    try {
+        const id = req.params.id;
+        const answer_id = await db.query(`DELETE FROM answer_comments WHERE comment_id = $1 RETURNING answer_id`, [id]);
+        res.send(answer_id.rows[0].answer_id);
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
 const view_comments = async(req, res) => {
     try {
         const id = req.params.id;
@@ -94,4 +106,5 @@ module.exports = {
     add_comment,
     view_comments,
     deleteAnswer,
+    deleteComments
 }

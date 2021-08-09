@@ -50,6 +50,20 @@ const questionDetailReducer = (state = initState, action) => {
                 ...state,
                 answerLists : updatedAnswersComments
             }
+
+        case 'DELETE_ANSWERS_COMMENT' :
+            const answersLists = [ ...state.answerLists.map(answer => {
+                if(answer.answer_id === action.answer_id){
+                    answer.comments = [...answer.comments.filter(comment => comment.comment_id !== action.id)]
+                }
+                return answer;
+            })]
+            
+            return {
+                ...state,
+                answersLists
+                
+            }
         case 'VIEW COMMENTS' :
             const viewCommentsData = state.answerLists.map(answer => {
                 if(answer.answer_id === action.answer_id){

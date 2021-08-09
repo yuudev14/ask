@@ -13,7 +13,6 @@ const Login = (props) => {
         password : ''
     });
     const {authToTrue, setError} = props;
-
     const login = async(e) => {
         e.preventDefault();
         try {
