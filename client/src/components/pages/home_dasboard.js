@@ -90,7 +90,7 @@ const HomeDashboard = (props) => {
         <Fragment>
                 <ul className='filter_options' ref={filter_options}>
                     <li id='popular' onClick={change_filter_options} className='view'>Popular</li>
-                    <li id='most_viewed' onClick={change_filter_options}>Most Viewed</li>
+                    <li id='most_viewed' onClick={change_filter_options}>Views</li>
                     <li id='new' onClick={change_filter_options}>New</li>
 
                 </ul>
