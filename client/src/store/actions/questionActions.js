@@ -48,7 +48,7 @@ export const getMostViewedQuestions = (start, filter) => {
 export const deleteQuestionList = (id) => {
     return async(dispatch) => {
         try {
-            const deleteQuestionMethod = await axios.delete(`/question/delete/${id}`)
+            await axios.delete(`/question/delete/${id}`)
             
         } catch (error) {
             console.log(error)

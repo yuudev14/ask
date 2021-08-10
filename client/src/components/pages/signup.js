@@ -1,6 +1,5 @@
-import WithNav from '../../hoc/withNav';
 import '../../styles/signup.scss';
-import React, {useRef, useState, useEffect, useContext} from 'react';
+import React, {useRef, useState} from 'react';
 import axios from 'axios';
 import SignupFirstStep from '../auth/signup_first_step';
 import SignupSecondStep from '../auth/signup_second_step';

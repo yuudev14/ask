@@ -1,6 +1,6 @@
 import {useRef, useState, useEffect} from 'react';
 import '../../styles/nav.scss';
-import {Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { resetUserInfo, setAuthToFalse } from "../../store/actions/authActions";
@@ -27,17 +27,18 @@ const Nav = (props) => {
         return 'showSearchContainer'
     };
 
-    const search_questions = async() => {
-        try {
-            const getSearchLists = await axios.post('/dashboard/search', {search : searchInput});
-            set_searchLists(getSearchLists.data);
-        } catch (error) {
-            console.log(error);
-            
-        }
-    }
+   
 
     useEffect(() => {
+        const search_questions = async() => {
+            try {
+                const getSearchLists = await axios.post('/dashboard/search', {search : searchInput});
+                set_searchLists(getSearchLists.data);
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
         if(searchInput !== ''){
             search_questions();
 

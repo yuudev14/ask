@@ -1,6 +1,6 @@
 import { resetUserInfo, setAuthToFalse } from "../../store/actions/authActions";
 import axios from 'axios';
-import {useRef, useEffect} from 'react';
+import {useRef} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { socket } from "../../socket";
@@ -65,13 +65,6 @@ const ProfileOption = (props) => {
         profile_options.current.classList.toggle('hide');
     };
 
-    // useEffect(() => {
-    //     profile_options.current.style.left = profile_btn.current.offsetLeft - 70 + 'px';
-    // }, [])
-    // window.onresize = () => {
-    //     profile_options.current.style.left = profile_btn.current.offsetLeft - 70 + 'px';
-    // }
-
     const notSeenNotification = notificationList.filter(notif => notif.notif_status === 'NOT SEEN').length;
     
     return ( 
@@ -84,7 +77,7 @@ const ProfileOption = (props) => {
                 {userInfo.profile_pic === null ? (
                     <i className='fa fa-user'></i>
                 ) : (
-                    <img id='prof_icon' src={userInfo.profile_pic} />
+                    <img id='prof_icon' src={userInfo.profile_pic} alt={userInfo.profile_pic}/>
 
                 )}
                 <ul ref={profile_options} className='profile_options hide'>

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import '../../styles/ask_question_n_answer.scss';
 import {withRouter} from 'react-router-dom';
-import { getMostViewedQuestions, getNewQuestions, getPopularQuestions, increment_questions_answer } from "../../store/actions/questionActions";
+import { increment_questions_answer } from "../../store/actions/questionActions";
 import { getAnswers, getDetails } from '../../store/actions/questionDetailActions';
 import {socket} from '../../socket';
 import { setError } from '../../store/actions/errorAction';
@@ -14,9 +14,6 @@ import { setError } from '../../store/actions/errorAction';
 const AnswerQuestion = (props) => {
     const {title, 
            filterState, 
-           getMostViewedQuestions, 
-           getNewQuestions, 
-           getPopularQuestions, 
            getDetails, 
            getAnswers,
            userInfo,
@@ -105,9 +102,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getPopularQuestions : () => {dispatch(getPopularQuestions())},
-        getNewQuestions : () => {dispatch(getNewQuestions())},
-        getMostViewedQuestions : () => {dispatch(getMostViewedQuestions())},
         increment_questions_answer : (question) => dispatch(increment_questions_answer(question)),
         getDetails : (question) => {dispatch(getDetails(question))},
         getAnswers : (question) => {dispatch(getAnswers(question))},

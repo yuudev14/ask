@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import '../../styles/question.scss';
 import {Link, withRouter} from 'react-router-dom';
 import QuestionCatalogBTN from './question_catalog';
@@ -48,8 +48,8 @@ const Questions = (props) => {
                 
                 <div className='question_info2'>
                     <ul className='question_tags'>
-                        {tags.map(tag => (
-                            <li>{tag}</li>
+                        {tags.map((tag, i) => (
+                            <li key={i}>{tag}</li>
                         ))}
 
                     </ul>

@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState, useEffect, memo } from "react";
+import { Fragment, useRef, useEffect, memo } from "react";
 import Questions from "../question/questions";
 import { connect } from 'react-redux';
 import { getMostViewedQuestions, getNewQuestions, getPopularQuestions } from "../../store/actions/questionActions";

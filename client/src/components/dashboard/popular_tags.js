@@ -3,7 +3,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 
 
-const Popular_tags = () => {
+const PopularTags = () => {
     const [popularTags, set_popularTags] = useState([]);
 
     const getPopularTags = async() => {
@@ -25,7 +25,7 @@ const Popular_tags = () => {
         <div className='tags'>
             <h3>Popular tags</h3>
             {popularTags.map(tag => (
-                <div className='tag'>
+                <div className='tag' key={tag.tag}>
                     <h4>{tag.tag}</h4>
                     <p>x</p>
                     <p>{tag.num}</p>
@@ -36,4 +36,4 @@ const Popular_tags = () => {
      );
 }
  
-export default Popular_tags;
+export default PopularTags;

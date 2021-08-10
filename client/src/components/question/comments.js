@@ -15,13 +15,12 @@ const Comment = (props) => {
         date,
         comment_id
     } = data;
-    console.log(data);
     return ( 
         <div className='comment'>
-            <div>
+            <div className='comment_header'>
                 <Link to={`/U/${username}`}><p className='commenter'> - {username}</p></Link>
                 {userInfo.username === username && (
-                    <div><i onClick={() => deleteCommentDispatch(comment_id)}>. . .</i></div>
+                    <i className='fa fa-trash' onClick={() => deleteCommentDispatch(comment_id)}></i>
 
                 )}
                 

@@ -12,8 +12,6 @@ import { getDate } from '../../methods/date';
 const Answer = (props) => {
     const {answer,
            votes, 
-           no_comment, 
-           question_id, 
            answer_id,
            comments,
            username,
@@ -23,7 +21,6 @@ const Answer = (props) => {
         answer_vote_down,
         add_comment,
         view_comments,
-        comment,
         userInfo} = props;
 
     const answer_comments = useRef();
@@ -128,8 +125,8 @@ const Answer = (props) => {
                     </form>
                     
                     <div className='comments_container' ref={answer_comments}>
-                    {comments.map(comment => (
-                                <Comment data={comment}/>
+                    {comments.map((comment, i) => (
+                                <Comment key={i} data={comment}/>
                             ))}
                     {comments.length === 0 && (
                         <p>no comments</p>

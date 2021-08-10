@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useState, memo, useRef } from "react";
+import { Fragment, useEffect, useState, memo } from "react";
 import '../../styles/question_details.scss';
 import Answer from "../question/answers";
 import axios from 'axios';
@@ -8,14 +8,12 @@ import {connect} from 'react-redux';
 import { getAnswers, getDetails, setDetails } from "../../store/actions/questionDetailActions";
 import QuestionOptions from "../question/question_options";
 import { setError } from "../../store/actions/errorAction";
-import {useLocation} from 'react-router-dom';
 import { getDate } from "../../methods/date";
 
 const QuestionDetails = (props) => {
     const {question_details, getDetails, emptyDetails, setDetails, getAnswers, userInfo,
     setError} = props;
     const [currentQuestion, setCurrentQuestion] = useState('');
-    const location = useLocation();
     const setupQuestionDetails = () => {
         const question_title = props.match.params.question
         getDetails(question_title);
@@ -112,10 +110,10 @@ const QuestionDetails = (props) => {
                     <div className='popular_answer_and_context'>{parse(question_details.context || '')}</div>
                     <div className='question_info2'>
                         <ul className='question_tags'>
-                            {question_details.tags && question_details.tags.map(tag => {
+                            {question_details.tags && question_details.tags.map(tag => 
                                 <li key={tag}>{tag}</li>
 
-                            })}
+                            )}
                             
 
                         </ul>

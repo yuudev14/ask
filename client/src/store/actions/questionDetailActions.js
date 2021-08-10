@@ -25,7 +25,7 @@ export const getAnswers = (question) => {
                 data.comments = []
                 return data
             });
-            dispatch({type : 'SET_ANSWERS', data : answers.data});
+            dispatch({type : 'SET_ANSWERS', data});
 
             
         } catch (error) {

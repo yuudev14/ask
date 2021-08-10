@@ -2,24 +2,25 @@ import {useEffect, useState} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import axios from 'axios'
 
-const Previous_viewed = (props) => {
+const PreviousViewed = (props) => {
     const [previousViewedQuestion, setPreviousViewedQuestion] = useState([]);
     const [path, setPath] = useState('');
-    useEffect(async() => {
-        if(path !== props.location.pathname){
-            try {
-                const prev_question = JSON.parse(localStorage.getItem('ask_previously_viewed'));
-                if(prev_question !== null){
-                    const questions = await axios.post('/dashboard/previously-viewed', prev_question);
-                    setPreviousViewedQuestion(questions.data.filter(question => question !== null));
-                    setPath(props.location.pathname)
+    useEffect(() => {
+        (async() =>{
+            if(path !== props.location.pathname){
+                try {
+                    const prev_question = JSON.parse(localStorage.getItem('ask_previously_viewed'));
+                    if(prev_question !== null){
+                        const questions = await axios.post('/dashboard/previously-viewed', prev_question);
+                        setPreviousViewedQuestion(questions.data.filter(question => question !== null));
+                        setPath(props.location.pathname)
+                    }
+                } catch (error) {
+                    console.log(error);
                 }
-            } catch (error) {
-                console.log(error);
             }
-
-        }
-    });
+        })()
+    }, [path, props.location.pathname]);
 
     return ( 
         <div className='previous_container' >
@@ -37,4 +38,4 @@ const Previous_viewed = (props) => {
      );
 }
  
-export default withRouter(Previous_viewed);
+export default withRouter(PreviousViewed);

@@ -1,5 +1,4 @@
-import {useRef, useEffect, useState} from 'react';
-import axios from 'axios';
+import {useEffect} from 'react';
 import { socket } from '../../socket';
 import {connect} from 'react-redux';
 import { getNotifications, set_new_notifications } from '../../store/actions/notificationActions';
@@ -11,10 +10,7 @@ const Notification = (props) => {
         getNotifications,
         notificationList,
         setNewNotification
-
     } = props;
-
-
     window.onresize = () => {
         if(window.innerWidth > 1000){
             notification.current.style.left = notification_icon.current.offsetLeft - 200 + 'px';
@@ -56,7 +52,7 @@ const Notification = (props) => {
                                 {notif.profile_pic === null ? (
                                     <i className='fa fa-user'></i>
                                 ) : (
-                                    <img id='prof_icon' src={notif.profile_pic} />
+                                    <img id='prof_icon' src={notif.profile_pic} alt=''/>
 
                                 )}
                             </div>

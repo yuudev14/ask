@@ -1,5 +1,5 @@
 import '../../styles/ask_question_n_answer.scss';
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef} from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { CKEditor } from '@ckeditor/ckeditor5-react';

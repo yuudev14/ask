@@ -26,7 +26,7 @@ const UserDashboard = (props) => {
     const change_filter_options = async(e) => {
         const lists = [...filter_options.current.getElementsByTagName('li')];
         lists.forEach(li => li === e.target ? li.classList.add('view') : li.classList.remove('view'));
-        if(props.match.path == '/profile'){
+        if(props.match.path === '/profile'){
             switch(e.target.id){
                 case 'popular':   
                     const popular_questionList = await axios.get('/dashboard/user-popular', {headers : {token : JSON.parse(localStorage.getItem('ask_token'))}});
@@ -120,7 +120,7 @@ const UserDashboard = (props) => {
             }
             setUrl(props.match.url);
         } 
-    });
+    }, [props.match.url]);
 
     const date = () => {
         const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
@@ -142,13 +142,13 @@ const UserDashboard = (props) => {
             <div className='user_profile'>
                 <div className='user_info'>
                     <div className='user_image'>
-                        <img src={props.match.path == '/profile' ? userInfo.profile_pic : profileInfo.profile_pic} />
+                        <img src={props.match.path === '/profile' ? userInfo.profile_pic : profileInfo.profile_pic} alt={'profile'}/>
                     </div>
                     <div className='user_name'>
-                        <h1>{props.match.path == '/profile' ? userInfo.first_name : profileInfo.first_name} {props.match.path == '/profile' ? userInfo.last_name : profileInfo.last_name}</h1>
-                        <h3>{props.match.path == '/profile' ? userInfo.username : profileInfo.username}</h3>
+                        <h1>{props.match.path === '/profile' ? userInfo.first_name : profileInfo.first_name} {props.match.path === '/profile' ? userInfo.last_name : profileInfo.last_name}</h1>
+                        <h3>{props.match.path === '/profile' ? userInfo.username : profileInfo.username}</h3>
                     </div>
-                    {props.match.path == '/profile' && (
+                    {props.match.path === '/profile' && (
                         <button>Edit Profile</button>
                     )}
                     

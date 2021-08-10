@@ -1,9 +1,9 @@
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import WithNav from '../../hoc/withNav';
 import '../../styles/home.scss';
-import React, {useRef, useEffect, useState} from 'react';
-import Previous_viewed from '../dashboard/previous_viewed';
-import Popular_tags from '../dashboard/popular_tags';
+import React from 'react';
+import PreviousViewed from '../dashboard/previous_viewed';
+import PopularTags from '../dashboard/popular_tags';
 import HomeDashboard from './home_dasboard';
 import UserDashboard from './user_dashboards';
 import QuestionDetails from './question_details';
@@ -18,7 +18,7 @@ const Home = () => {
             <div className='tags_container'>
                 <div className='tags_container_fixed'>
                     
-                    <Popular_tags />
+                    <PopularTags />
 
                 </div>
 
@@ -37,7 +37,7 @@ const Home = () => {
             </div>
             <div className='previous_footer_container'>
                 <div className='previous_footer_container_fixed'>
-                    <Previous_viewed />
+                    <PreviousViewed />
                     <footer>
 
                     </footer>
