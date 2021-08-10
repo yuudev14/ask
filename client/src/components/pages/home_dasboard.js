@@ -57,7 +57,6 @@ const HomeDashboard = (props) => {
       window.onscroll = function(ev) {
         
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && questions_posts.length > 0) {
-            console.log(true)
             
             switch(filter){
                 case 'popular':

@@ -19,7 +19,10 @@ export const getDate = (date) => {
         if(month[currentDate.getMonth()] === dateObj.month){
             const date = currentDate.getDate() - dateObj.date
             if(date === 0){
+                
+                
                 if(dateObj.hour === currentDate.getHours()){
+                    
                     if(dateObj.minutes === currentDate.getMinutes()){
                         return `${currentDate.getSeconds() - dateObj.seconds} seconds ago`
                     }else{
@@ -28,8 +31,16 @@ export const getDate = (date) => {
                     }
 
                 }else{
-                    // return `${currentDate.getHours() - dateObj.hour}`
-                    return `${currentDate.getMinutes() - dateObj.minutes} minutes ago`
+                    const minute = 60 - dateObj.minutes + currentDate.getMinutes()
+                    if(minute < 60){
+                        return `${minute} minutes ago`
+
+                    }else{
+                        return `${currentDate.getHours() - dateObj.hour} hours ago`
+
+                    }
+                    
+                    // return `${currentDate.getMinutes() - dateObj.minutes} minutes ago`
 
                 }
 
