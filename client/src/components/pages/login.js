@@ -48,7 +48,7 @@ const Login = (props) => {
                 <input type='submit' value='log-in' />
             </form>
             or
-            <OAuthBntn pathname={props.location.pathname}/>
+            {/* <OAuthBntn pathname={props.location.pathname}/> */}
 
             <p className='already_have'>Don't have an account? <Link to='/sign-up'>Sign up</Link></p>
             

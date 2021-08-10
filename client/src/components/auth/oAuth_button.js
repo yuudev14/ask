@@ -39,17 +39,16 @@ const OAuthBntn = (props) => {
     }
 
     const responseGoogle = response => {
-        console.log(response);
         
-        // const data = {
-        //     first_name : response.profileObj.givenName,
-        //     last_name : response.profileObj.familyName,
-        //     email : response.profileObj.email,
-        //     profile_pic : response.profileObj.imageUrl,
-        //     password : response.googleId,
-        //     type : 'google'
-        // }
-        // oAuth(data);
+        const data = {
+            first_name : response.profileObj.givenName,
+            last_name : response.profileObj.familyName,
+            email : response.profileObj.email,
+            profile_pic : response.profileObj.imageUrl,
+            password : response.googleId,
+            type : 'google'
+        }
+        oAuth(data);
     }
     return ( 
         <Fragment>

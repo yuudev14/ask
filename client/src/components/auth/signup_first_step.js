@@ -21,8 +21,8 @@ const SignupFirstStep = (props) => {
                     
                     <input type='submit' value='next' />
                 </form>
-                or
-                <OAuthBntn  pathname={props.location.pathname}/>
+                {/* or
+                <OAuthBntn  pathname={props.location.pathname}/> */}
                
                 <p className='signup_warning'>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p>
                 <p className='already_have'>Already have an account? <Link to='/login'>Log in</Link></p>
