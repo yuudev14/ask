@@ -62,7 +62,7 @@ npm run dev
 #### 5. Let's get started!
  
 # Future Feature 🔮
-I want to incorporate a andavance filter option based on the tags the user selected.
+I want to incorporate an adavance filter option based on the tags the user selected.
 # Tech Stack 🤖  
 1. React
 2. Redux
