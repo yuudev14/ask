@@ -6,7 +6,8 @@
 3. [Live Application 🌈](#live-application-)
 4. [Requirements　🙏](#requirements-)
 5. [Getting Started　🎬](#getting-started-)
-6. [Tech Stack　🤖](#tech-stack-)
+6. [Future Feature 🔮](#future-feature)
+7. [Tech Stack　🤖](#tech-stack-)
 
 # About 💁
 This is a full-stack social media application platform for posting questions. If you have any questions that you want to be answered or maybe have a forum or read some opinions from others on a specific topic, then Ask is right place for you. 
@@ -59,7 +60,9 @@ To start the server, run this code in your terminal.
 npm run dev
 ```
 #### 5. Let's get started!
-  
+ 
+# Future Feature 🔮
+I want to incorporate a andavance filter option based on the tags the user selected.
 # Tech Stack 🤖  
 1. React
 2. Redux
