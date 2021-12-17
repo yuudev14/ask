@@ -4,10 +4,9 @@
 1. [About　💁](#about-)
 2. [Features　✨](#features-)
 3. [Live Application 🌈](#live-application-)
-4. [Requirements　🙏](#requirements-)
-5. [Getting Started　🎬](#getting-started-)
-6. [Future Feature 🔮](#future-feature)
-7. [Tech Stack　🤖](#tech-stack-)
+4. [Getting Started　🎬](#getting-started-)
+5. [Future Feature 🔮](#future-feature)
+6. [Tech Stack　🤖](#tech-stack-)
 
 # About 💁
 This is a full-stack social media application platform for posting questions. If you have any questions that you want to be answered or maybe have a forum or read some opinions from others on a specific topic, then Ask is right place for you. 
@@ -29,10 +28,7 @@ You can start adding tags to your questions to access the question more easily i
 
 # Live Application 🌈
 You can try the live application [here](https://ask-yu.herokuapp.com/).  
-# Requirements 🙏
-To use this application, 
-* This is the client side repository. You need to run the server side at the same time. This is [Server Repository](https://github.com/Team-Freshly-Washed-Turtles/pet-server).
-* You need **Node.js**, **yarn** installed on your computer. Also, you need to use **mongodb** on your computer or on cloud.
+
 # Getting Started 🎬
 #### 1. Install Dependencies
 To install all dependencies, run this code in your terminal.
